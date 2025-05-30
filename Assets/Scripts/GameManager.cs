@@ -1,10 +1,17 @@
+
 ﻿using UnityEngine;
+
+using UnityEngine;
+
 
 public class GameManager : MonoBehaviour
 {
     private Car myCar;
     private Motorcycle myBike;
+
     private Truck myTruck;
+
+
 
     void Start()
     {
@@ -29,6 +36,7 @@ public class GameManager : MonoBehaviour
         myBike.hasSidecar = true;
 
 
+
         // create truck object
         GameObject truckObj = new GameObject("Truck", typeof(Truck));
         truckObj.transform.position = new Vector3(4, 0, 0);
@@ -40,11 +48,17 @@ public class GameManager : MonoBehaviour
         myTruck.cargoCapacity = 5.5f;
 
 
+
+        
+
         myCar.StartVehicle();
         myBike.StartVehicle();
         myCar.DisplayInfo();
         myBike.DisplayInfo();
+
         myTruck.DisplayInfo();
+
+
     }
 
     
@@ -62,12 +76,15 @@ public class GameManager : MonoBehaviour
         myBike.StartVehicle();
     }
 
+
     public void ReduceTruckFuel()
     {
         myTruck.Fuel -= 3;
         Debug.Log($"[TRUCK] New fuel: {myTruck.Fuel}");
         myTruck.StartVehicle();
     }
+
+
 
     private Mesh CreateCubeMesh()
     {
